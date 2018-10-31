@@ -31,7 +31,7 @@ for i in range(2000):
     if i % 200 == 0:
         train_accuracy=accuracy.eval(feed_dict={x:batch[0],y_:batch[1]})
         print "step %d,train_accuracy= %g"%(i,train_accuracy)
-	if train_accuracy > 0.95:
-	    saver.save(sess, "/Users/apple/MNIST_data/model.model.ckpt")
-            break
+	# if train_accuracy > 0.95:
+	#     saver.save(sess, "/Users/apple/MNIST_data/model.model.ckpt")
+     #        break
     train_step.run(feed_dict={x:batch[0],y_:batch[1]})
