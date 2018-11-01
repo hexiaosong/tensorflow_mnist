@@ -13,8 +13,15 @@ from keras.preprocessing.image import ImageDataGenerator
 train_dir="/Users/apple/Downloads/catvsdog/train"
 test_dir="/Users/apple/Downloads/catvsdog/test"
 
-train_pic_gen=ImageDataGenerator(rescale=1./255,rotation_range=20,width_shift_range=0.2,height_shift_range=0.2,
-                                 shear_range=0.2,zoom_range=0.5,horizontal_flip=True,fill_mode='nearest')
+train_pic_gen=ImageDataGenerator(rescale=1./255,         #
+                                 rotation_range=20,
+                                 width_shift_range=0.2,
+                                 height_shift_range=0.2,
+                                 shear_range=0.2,
+                                 zoom_range=0.5,
+                                 horizontal_flip=True,
+                                 fill_mode='nearest'
+                                 )
 test_pic_gen=ImageDataGenerator(rescale=1./255)
 
 train_flow=train_pic_gen.flow_from_directory(train_dir,(128,128),batch_size=32,class_mode='binary')
@@ -33,7 +40,7 @@ conv_base.trainable=False
 model.summary()
 
 model.compile(optimizer='adam',loss='binary_crossentropy',metrics=['acc'])
-
+model.summary()
 
 model.fit_generator(
       train_flow,

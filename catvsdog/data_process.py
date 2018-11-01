@@ -30,12 +30,12 @@ createDir(path+"train/cats")
 createDir(path+"test/dogs")
 createDir(path+"test/cats")
 
-for dog,cat in list(zip(dogs,cats))[:1000]:
+for dog,cat in list(zip(dogs,cats))[:10000]:
     shutil.copyfile(dog,path+"train/dogs/"+os.path.basename(dog))
     print(os.path.basename(dog)+"操作成功")
     shutil.copyfile(cat, path + "train/cats/" + os.path.basename(cat))
     print(os.path.basename(cat) + "操作成功")
-for dog, cat in list(zip(dogs, cats))[1000:1500]:
+for dog, cat in list(zip(dogs, cats))[10000:]:
     shutil.copyfile(dog, path + "test/dogs/" + os.path.basename(dog))
     print(os.path.basename(dog) + "操作成功")
     shutil.copyfile(cat, path + "test/cats/" + os.path.basename(cat))
